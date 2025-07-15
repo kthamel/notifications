@@ -18,7 +18,7 @@ pipeline {
                 }
             }
 
-        stage('TF Apply') {
+        stage('Manual Approval') {
             input {
             message "Are you sure to do that?"
                 id "InputMsg"
@@ -32,7 +32,7 @@ pipeline {
             }          
         }
 
-        stage('Trigger downstream job') {
+        stage('Deploying') {
             steps {
                 script {
                     build job: 'provision-lambdas',
