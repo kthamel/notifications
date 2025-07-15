@@ -31,5 +31,14 @@ pipeline {
                 }
             }          
         }
+
+        stage('Trigger downstream job') {
+            steps {
+                script {
+                    build job: 'provision-lambdas',
+                          wait: true
+                }
+            }
+        }
     }
 }
