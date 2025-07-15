@@ -3,7 +3,7 @@ import json
 import os
 
 sns_client = boto3.client('sns')
-topic_arn = os.environ['SNS_TOPIC_ARN']
+topic_arn = os.environ['arn:aws:sns:us-east-1:533629863969:S3BucketChangeNotifications']
 
 def lambda_handler(event, context):
     print("Received event:", json.dumps(event, indent=2))
